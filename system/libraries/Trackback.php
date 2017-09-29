@@ -239,7 +239,7 @@ class CI_Trackback {
 	 */
 	public function send_error($message = 'Incomplete Information')
 	{
-		exit('<?xml version="1.0" encoding="utf-8"?'.">\n<response>\n<error>1</error>\n<message.php>".$message."</message.php>\n</response>");
+        exit('<?xml version="1.0" encoding="utf-8"?' . ">\n<response>\n<error>1</error>\n<message>" . $message . "</message>\n</response>");
 	}
 
 	// --------------------------------------------------------------------
@@ -322,7 +322,7 @@ class CI_Trackback {
 
 		if (stripos($this->response, '<error>0</error>') === FALSE)
 		{
-			$message = preg_match('/<message.php>(.*?)<\/message.php>/is', $this->response, $match)
+            $message = preg_match('/<message>(.*?)<\/message>/is', $this->response, $match)
 				? trim($match[1])
 				: 'An unknown error was encountered';
 			$this->set_error($message);
@@ -528,7 +528,7 @@ class CI_Trackback {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set error message.php
+     * Set error message
 	 *
 	 * @param	string
 	 * @return	void

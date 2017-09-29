@@ -101,7 +101,7 @@ class CI_Migration {
 	protected $_migration_regex;
 
 	/**
-	 * Error message.php
+     * Error message
 	 *
 	 * @var string
 	 */
@@ -361,7 +361,7 @@ class CI_Migration {
 	/**
 	 * Error string
 	 *
-	 * @return	string	Error message.php returned as a string
+     * @return    string    Error message returned as a string
 	 */
 	public function error_string()
 	{

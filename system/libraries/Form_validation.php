@@ -98,7 +98,7 @@ class CI_Form_validation {
 	protected $_error_suffix	= '</p>';
 
 	/**
-	 * Custom error message.php
+     * Custom error message
 	 *
 	 * @var string
 	 */
@@ -188,7 +188,7 @@ class CI_Form_validation {
 				// If the field label wasn't passed we use the field name
 				$label = isset($row['label']) ? $row['label'] : $row['field'];
 
-				// Add the custom error message.php array
+                // Add the custom error message array
 				$errors = (isset($row['errors']) && is_array($row['errors'])) ? $row['errors'] : array();
 
 				// Here we go!
@@ -302,7 +302,7 @@ class CI_Form_validation {
 	/**
 	 * Set The Error Delimiter
 	 *
-	 * Permits a prefix/suffix to be added to each error message.php
+     * Permits a prefix/suffix to be added to each error message
 	 *
 	 * @param	string
 	 * @param	string
@@ -320,7 +320,7 @@ class CI_Form_validation {
 	/**
 	 * Get Error Message
 	 *
-	 * Gets the error message.php associated with a particular field
+     * Gets the error message associated with a particular field
 	 *
 	 * @param	string	$field	Field name
 	 * @param	string	$prefix	HTML start tag
@@ -797,17 +797,17 @@ class CI_Form_validation {
 					$line = $this->_get_error_message($rule, $row['field']);
 				}
 
-				// Is the parameter we are inserting into the error message.php the name
+                // Is the parameter we are inserting into the error message the name
 				// of another field? If so we need to grab its "field label"
 				if (isset($this->_field_data[$param], $this->_field_data[$param]['label']))
 				{
 					$param = $this->_translate_fieldname($this->_field_data[$param]['label']);
 				}
 
-				// Build the error message.php
+                // Build the error message
 				$message = $this->_build_error_msg($line, $this->_translate_fieldname($row['label']), $param);
 
-				// Save the error message.php
+                // Save the error message
 				$this->_field_data[$row['field']]['error'] = $message;
 
 				if ( ! isset($this->_error_array[$row['field']]))
@@ -823,7 +823,7 @@ class CI_Form_validation {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Get the error message.php for the rule
+     * Get the error message for the rule
 	 *
 	 * @param 	string $rule 	The rule name
 	 * @param 	string $field	The field name
@@ -831,12 +831,11 @@ class CI_Form_validation {
 	 */
 	protected function _get_error_message($rule, $field)
 	{
-		// check if a custom message.php is defined through validation config row.
+        // check if a custom message is defined through validation config row.
 		if (isset($this->_field_data[$field]['errors'][$rule]))
 		{
 			return $this->_field_data[$field]['errors'][$rule];
-		}
-		// check if a custom message.php has been set using the set_message() function
+		} // check if a custom message has been set using the set_message() function
 		elseif (isset($this->_error_messages[$rule]))
 		{
 			return $this->_error_messages[$rule];
@@ -877,9 +876,9 @@ class CI_Form_validation {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Build an error message.php using the field and param.
-	 *
-	 * @param	string	The error message.php line
+     * Build an error message using the field and param.
+     *
+     * @param    string    The error message line
 	 * @param	string	A field's human name
 	 * @param	mixed	A rule's optional parameter
 	 * @return	string

@@ -120,7 +120,7 @@ class CI_Config {
 	 *
 	 * @param	string	$file			Configuration file name
 	 * @param	bool	$use_sections		Whether configuration values should be loaded into their own section
-	 * @param	bool	$fail_gracefully	Whether to just return FALSE or display an error message.php
+     * @param    bool $fail_gracefully Whether to just return FALSE or display an error message
 	 * @return	bool	TRUE if the file was loaded correctly or FALSE on failure
 	 */
 	public function load($file = '', $use_sections = FALSE, $fail_gracefully = FALSE)

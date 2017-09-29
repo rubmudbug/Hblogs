@@ -511,7 +511,7 @@ abstract class CI_DB_driver {
 	 */
 	public function error()
 	{
-		return array('code' => NULL, 'message.php' => NULL);
+        return array('code' => NULL, 'message' => NULL);
 	}
 
 	// --------------------------------------------------------------------
@@ -668,13 +668,13 @@ abstract class CI_DB_driver {
 			$error = $this->error();
 
 			// Log errors
-			log_message('error', 'Query error: '.$error['message.php'].' - Invalid query: '.$sql);
+            log_message('error', 'Query error: ' . $error['message'] . ' - Invalid query: ' . $sql);
 
 			if ($this->db_debug)
 			{
 				// We call this function in order to roll-back queries
 				// if transactions are enabled. If we don't call this here
-				// the error message.php will trigger an exit, causing the
+                // the error message will trigger an exit, causing the
 				// transactions to remain in limbo.
 				while ($this->_trans_depth !== 0)
 				{
@@ -688,7 +688,7 @@ abstract class CI_DB_driver {
 				}
 
 				// Display errors
-				return $this->display_error(array('Error Number: '.$error['code'], $error['message.php'], $sql));
+                return $this->display_error(array('Error Number: ' . $error['code'], $error['message'], $sql));
 			}
 
 			return FALSE;
@@ -916,6 +916,7 @@ abstract class CI_DB_driver {
 
 		if ($this->_trans_begin())
 		{
+            $this->_trans_status = TRUE;
 			$this->_trans_depth++;
 			return TRUE;
 		}
@@ -1044,7 +1045,7 @@ abstract class CI_DB_driver {
 	 */
 	public function is_write_type($sql)
 	{
-		return (bool) preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX)\s/i', $sql);
+        return (bool)preg_match('/^\s*"?(SET|INSERT|UPDATE|DELETE|REPLACE|CREATE|DROP|TRUNCATE|LOAD|COPY|ALTER|RENAME|GRANT|REVOKE|LOCK|UNLOCK|REINDEX|MERGE)\s/i', $sql);
 	}
 
 	// --------------------------------------------------------------------
@@ -1730,11 +1731,11 @@ abstract class CI_DB_driver {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Display an error message.php
-	 *
-	 * @param	string	the error message.php
+     * Display an error message
+     *
+     * @param    string    the error message
 	 * @param	string	any "swap" values
-	 * @param	bool	whether to localize the message.php
+     * @param    bool    whether to localize the message
 	 * @return	string	sends the application/views/errors/error_db.php template
 	 */
 	public function display_error($error = '', $swap = '', $native = FALSE)

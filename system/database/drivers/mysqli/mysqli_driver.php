@@ -491,7 +491,7 @@ class CI_DB_mysqli_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
@@ -502,11 +502,11 @@ class CI_DB_mysqli_driver extends CI_DB {
 		{
 			return array(
 				'code'    => $this->_mysqli->connect_errno,
-				'message.php' => $this->_mysqli->connect_error
+                'message' => $this->_mysqli->connect_error
 			);
 		}
 
-		return array('code' => $this->conn_id->errno, 'message.php' => $this->conn_id->error);
+        return array('code' => $this->conn_id->errno, 'message' => $this->conn_id->error);
 	}
 
 	// --------------------------------------------------------------------

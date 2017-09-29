@@ -470,14 +470,14 @@ class CI_DB_postgre_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		return array('code' => '', 'message.php' => pg_last_error($this->conn_id));
+        return array('code' => '', 'message' => pg_last_error($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

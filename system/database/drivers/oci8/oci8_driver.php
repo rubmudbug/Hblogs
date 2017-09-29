@@ -552,7 +552,7 @@ class CI_DB_oci8_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
@@ -560,7 +560,7 @@ class CI_DB_oci8_driver extends CI_DB {
 	public function error()
 	{
 		// oci_error() returns an array that already contains
-		// 'code' and 'message.php' keys, but it can return false
+        // 'code' and 'message' keys, but it can return false
 		// if there was no error ....
 		if (is_resource($this->curs_id))
 		{
@@ -581,7 +581,7 @@ class CI_DB_oci8_driver extends CI_DB {
 
 		return is_array($error)
 			? $error
-			: array('code' => '', 'message.php' => '');
+            : array('code' => '', 'message' => '');
 	}
 
 	// --------------------------------------------------------------------

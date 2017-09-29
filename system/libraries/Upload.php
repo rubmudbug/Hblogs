@@ -1143,7 +1143,7 @@ class CI_Upload {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set an error message.php
+     * Set an error message
 	 *
 	 * @param	string	$msg
 	 * @return	CI_Upload
@@ -1166,7 +1166,7 @@ class CI_Upload {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Display the error message.php
+     * Display the error message
 	 *
 	 * @param	string	$open
 	 * @param	string	$close
@@ -1312,7 +1312,7 @@ class CI_Upload {
 			}
 		}
 
-		// Fall back to the deprecated mime_content_type(), if available (still better than $_FILES[$field]['type'])
+        // Fall back to mime_content_type(), if available (still better than $_FILES[$field]['type'])
 		if (function_exists('mime_content_type'))
 		{
 			$this->file_type = @mime_content_type($file['tmp_name']);

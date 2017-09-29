@@ -357,14 +357,14 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		$error = array('code' => '00000', 'message.php' => '');
+        $error = array('code' => '00000', 'message' => '');
 		$sqlsrv_errors = sqlsrv_errors(SQLSRV_ERR_ERRORS);
 
 		if ( ! is_array($sqlsrv_errors))
@@ -382,9 +382,8 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 			$error['code'] = $sqlsrv_error['code'];
 		}
 
-		if (isset($sqlsrv_error['message.php']))
-		{
-			$error['message.php'] = $sqlsrv_error['message.php'];
+        if (isset($sqlsrv_error['message'])) {
+            $error['message'] = $sqlsrv_error['message'];
 		}
 
 		return $error;
@@ -478,7 +477,7 @@ class CI_DB_sqlsrv_driver extends CI_DB {
 			$sql = trim(substr($sql, 0, strrpos($sql, $orderby)));
 
 			// Get the fields to select from our subquery, so that we can avoid CI_rownum appearing in the actual results
-			if (count($this->qb_select) === 0)
+            if (count($this->qb_select) === 0 OR strpos(implode(',', $this->qb_select), '*') !== FALSE)
 			{
 				$select = '*'; // Inevitable
 			}

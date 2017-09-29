@@ -401,14 +401,14 @@ class CI_DB_odbc_driver extends CI_DB_driver {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		return array('code' => odbc_error($this->conn_id), 'message.php' => odbc_errormsg($this->conn_id));
+        return array('code' => odbc_error($this->conn_id), 'message' => odbc_errormsg($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

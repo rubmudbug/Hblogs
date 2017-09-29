@@ -351,7 +351,7 @@ class CI_DB_mssql_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
@@ -361,13 +361,13 @@ class CI_DB_mssql_driver extends CI_DB {
 		// We need this because the error info is discarded by the
 		// server the first time you request it, and query() already
 		// calls error() once for logging purposes when a query fails.
-		static $error = array('code' => 0, 'message.php' => NULL);
+        static $error = array('code' => 0, 'message' => NULL);
 
 		$message = mssql_get_last_message();
 		if ( ! empty($message))
 		{
 			$error['code']    = $this->query('SELECT @@ERROR AS code')->row()->code;
-			$error['message.php'] = $message;
+            $error['message'] = $message;
 		}
 
 		return $error;
@@ -453,7 +453,7 @@ class CI_DB_mssql_driver extends CI_DB {
 			$sql = trim(substr($sql, 0, strrpos($sql, $orderby)));
 
 			// Get the fields to select from our subquery, so that we can avoid CI_rownum appearing in the actual results
-			if (count($this->qb_select) === 0)
+            if (count($this->qb_select) === 0 OR strpos(implode(',', $this->qb_select), '*') !== FALSE)
 			{
 				$select = '*'; // Inevitable
 			}

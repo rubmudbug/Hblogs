@@ -453,7 +453,7 @@ if ( ! function_exists('log_message'))
 	 * class and send messages to be logged.
 	 *
 	 * @param	string	the error level: 'error', 'debug' or 'info'
-	 * @param	string	the error message.php
+     * @param    string    the error message
 	 * @return	void
 	 */
 	function log_message($level, $message)
@@ -555,7 +555,7 @@ if ( ! function_exists('set_status_header'))
 			}
 			else
 			{
-				show_error('No status text available. Please check your status code number or supply your own message.php text.', 500);
+                show_error('No status text available. Please check your status code number or supply your own message text.', 500);
 			}
 		}
 
@@ -686,7 +686,7 @@ if ( ! function_exists('_shutdown_handler'))
 		if (isset($last_error) &&
 			($last_error['type'] & (E_ERROR | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING)))
 		{
-			_error_handler($last_error['type'], $last_error['message.php'], $last_error['file'], $last_error['line']);
+            _error_handler($last_error['type'], $last_error['message'], $last_error['file'], $last_error['line']);
 		}
 	}
 }

@@ -176,9 +176,9 @@ abstract class CI_Session_driver implements SessionHandlerInterface {
 	 * Drivers other than the 'files' one don't (need to) use the
 	 * session.save_path INI setting, but that leads to confusing
 	 * error messages emitted by PHP when open() or write() fail,
-	 * as the message.php contains session.save_path ...
+     * as the message contains session.save_path ...
 	 * To work around the problem, the drivers will call this method
-	 * so that the INI is set just in time for the error message.php to
+     * so that the INI is set just in time for the error message to
 	 * be properly generated.
 	 *
 	 * @return	mixed

@@ -972,7 +972,7 @@ class CI_Image_lib {
 			$cmd_inner = 'pnmscale -xysize '.$this->width.' '.$this->height;
 		}
 
-		$cmd = $this->library_path.$cmd_in.' '.$this->full_src_path.' | '.$cmd_inner.' | '.$cmd_out.' > '.$this->dest_folder.'netpbm.tmp';
+        $cmd = $this->library_path . $cmd_in . ' ' . escapeshellarg($this->full_src_path) . ' | ' . $cmd_inner . ' | ' . $cmd_out . ' > ' . $this->dest_folder . 'netpbm.tmp';
 
 		$retval = 1;
 		// exec() might be disabled
@@ -1766,7 +1766,7 @@ class CI_Image_lib {
 		if ( ! extension_loaded('gd'))
 		{
 			/* As it is stated in the PHP manual, dl() is not always available
-			 * and even if so - it could generate an E_WARNING message.php on failure
+			 * and even if so - it could generate an E_WARNING message on failure
 			 */
 			return (function_exists('dl') && @dl('gd.so'));
 		}
@@ -1795,7 +1795,7 @@ class CI_Image_lib {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Set error message.php
+     * Set error message
 	 *
 	 * @param	string
 	 * @return	void

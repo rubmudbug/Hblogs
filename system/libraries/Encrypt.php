@@ -150,13 +150,13 @@ class CI_Encrypt {
 	/**
 	 * Encode
 	 *
-	 * Encodes the message.php string using bitwise XOR encoding.
+     * Encodes the message string using bitwise XOR encoding.
 	 * The key is combined with a random hash, and then it
 	 * too gets converted using XOR. The whole thing is then run
 	 * through mcrypt using the randomized key. The end result
-	 * is a double-encrypted message.php string that is randomized
+     * is a double-encrypted message string that is randomized
 	 * with each call to this function, even if the supplied
-	 * message.php and key are the same.
+     * message and key are the same.
 	 *
 	 * @param	string	the string to encode
 	 * @param	string	the key
@@ -241,7 +241,7 @@ class CI_Encrypt {
 	 * XOR Decode
 	 *
 	 * Takes an encoded string and key as input and generates the
-	 * plain-text original message.php
+     * plain-text original message
 	 *
 	 * @param	string
 	 * @param	string

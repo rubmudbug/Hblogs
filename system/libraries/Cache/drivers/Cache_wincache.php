@@ -54,7 +54,7 @@ class CI_Cache_wincache extends CI_Driver {
 	/**
 	 * Class constructor
 	 *
-	 * Only present so that an error message.php is logged
+     * Only present so that an error message is logged
 	 * if APC is not available.
 	 *
 	 * @return	void

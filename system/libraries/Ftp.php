@@ -652,7 +652,7 @@ class CI_FTP {
 	// ------------------------------------------------------------------------
 
 	/**
-	 * Display error message.php
+     * Display error message
 	 *
 	 * @param	string	$line
 	 * @return	void

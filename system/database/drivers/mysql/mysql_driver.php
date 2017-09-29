@@ -447,14 +447,14 @@ class CI_DB_mysql_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		return array('code' => mysql_errno($this->conn_id), 'message.php' => mysql_error($this->conn_id));
+        return array('code' => mysql_errno($this->conn_id), 'message' => mysql_error($this->conn_id));
 	}
 
 	// --------------------------------------------------------------------

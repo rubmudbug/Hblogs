@@ -121,7 +121,7 @@ class CI_Email {
 	public $smtp_crypto	= '';
 
 	/**
-	 * Whether to apply word-wrapping to the message.php body.
+     * Whether to apply word-wrapping to the message body.
 	 *
 	 * @var	bool
 	 */
@@ -150,7 +150,7 @@ class CI_Email {
 	public $charset		= 'UTF-8';
 
 	/**
-	 * Alternative message.php (for HTML messages only)
+     * Alternative message (for HTML messages only)
 	 *
 	 * @var	string
 	 */
@@ -247,7 +247,7 @@ class CI_Email {
 	protected $_body		= '';
 
 	/**
-	 * Final message.php body to be sent.
+     * Final message body to be sent.
 	 *
 	 * @var	string
 	 */
@@ -987,13 +987,13 @@ class CI_Email {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Mime message.php
+     * Mime message
 	 *
 	 * @return	string
 	 */
 	protected function _get_mime_message()
 	{
-		return 'This is a multi-part message.php in MIME format.'.$this->newline.'Your email application may not support this format.';
+        return 'This is a multi-part message in MIME format.' . $this->newline . 'Your email application may not support this format.';
 	}
 
 	// --------------------------------------------------------------------
@@ -1070,11 +1070,11 @@ class CI_Email {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Build alternative plain text message.php
-	 *
-	 * Provides the raw message.php for use in plain-text headers of
+     * Build alternative plain text message
+     *
+     * Provides the raw message for use in plain-text headers of
 	 * HTML-formatted emails.
-	 * If the user hasn't specified his own alternative message.php
+     * If the user hasn't specified his own alternative message
 	 * it creates one by stripping the HTML
 	 *
 	 * @return	string

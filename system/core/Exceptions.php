@@ -94,7 +94,7 @@ class CI_Exceptions {
 	 * Logs PHP generated error messages
 	 *
 	 * @param	int	$severity	Log level
-	 * @param	string	$message	Error message.php
+     * @param    string $message Error message
 	 * @param	string	$filepath	File path
 	 * @param	int	$line		Line number
 	 * @return	void
@@ -144,11 +144,11 @@ class CI_Exceptions {
 	/**
 	 * General Error Page
 	 *
-	 * Takes an error message.php as input (either as a string or an array)
+     * Takes an error message as input (either as a string or an array)
 	 * and displays it using the specified template.
 	 *
 	 * @param	string		$heading	Page heading
-	 * @param	string|string[]	$message	Error message.php
+     * @param    string|string[] $message Error message
 	 * @param	string		$template	Template name
 	 * @param 	int		$status_code	(default: 500)
 	 *
@@ -228,7 +228,7 @@ class CI_Exceptions {
 	 * Native PHP error handler
 	 *
 	 * @param	int	$severity	Error level
-	 * @param	string	$message	Error message.php
+     * @param    string $message Error message
 	 * @param	string	$filepath	File path
 	 * @param	int	$line		Line number
 	 * @return	void

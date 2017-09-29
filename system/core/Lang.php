@@ -184,7 +184,7 @@ class CI_Lang {
 	 * Fetches a single line of text from the language array
 	 *
 	 * @param	string	$line		Language line key
-	 * @param	bool	$log_errors	Whether to log an error message.php if the line is not found
+     * @param    bool $log_errors Whether to log an error message if the line is not found
 	 * @return	string	Translation
 	 */
 	public function line($line, $log_errors = TRUE)

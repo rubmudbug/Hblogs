@@ -293,14 +293,14 @@ class CI_DB_ibase_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		return array('code' => ibase_errcode(), 'message.php' => ibase_errmsg());
+        return array('code' => ibase_errcode(), 'message' => ibase_errmsg());
 	}
 
 	// --------------------------------------------------------------------

@@ -224,7 +224,7 @@ class CI_Xmlrpc {
 	public $message			= '';
 
 	/**
-	 * Request error message.php
+     * Request error message
 	 *
 	 * @var	string
 	 */
@@ -621,7 +621,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 	public $errno			= '';
 
 	/**
-	 * Error message.php
+     * Error message
 	 *
 	 * @var	string
 	 */
@@ -675,7 +675,7 @@ class XML_RPC_Client extends CI_Xmlrpc
 	// --------------------------------------------------------------------
 
 	/**
-	 * Send message.php
+     * Send message
 	 *
 	 * @param	mixed	$msg
 	 * @return	object
@@ -800,7 +800,7 @@ class XML_RPC_Response
 	public $errno		= 0;
 
 	/**
-	 * Error message.php
+     * Error message
 	 *
 	 * @var	string
 	 */
@@ -1602,7 +1602,7 @@ class XML_RPC_Message extends CI_Xmlrpc
 	// --------------------------------------------------------------------
 
 	/**
-	 * Decode message.php
+     * Decode message
 	 *
 	 * @param	object
 	 * @return	mixed

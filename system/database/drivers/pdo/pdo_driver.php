@@ -284,14 +284,14 @@ class CI_DB_pdo_driver extends CI_DB {
 	/**
 	 * Error
 	 *
-	 * Returns an array containing code and message.php of the last
+     * Returns an array containing code and message of the last
 	 * database error that has occurred.
 	 *
 	 * @return	array
 	 */
 	public function error()
 	{
-		$error = array('code' => '00000', 'message.php' => '');
+        $error = array('code' => '00000', 'message' => '');
 		$pdo_error = $this->conn_id->errorInfo();
 
 		if (empty($pdo_error[0]))
@@ -302,7 +302,7 @@ class CI_DB_pdo_driver extends CI_DB {
 		$error['code'] = isset($pdo_error[1]) ? $pdo_error[0].'/'.$pdo_error[1] : $pdo_error[0];
 		if (isset($pdo_error[2]))
 		{
-			 $error['message.php'] = $pdo_error[2];
+            $error['message'] = $pdo_error[2];
 		}
 
 		return $error;

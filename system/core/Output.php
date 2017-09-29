@@ -332,7 +332,7 @@ class CI_Output {
 	 * set_status_header().
 	 *
 	 * @param	int	$code	Status code (default: 200)
-	 * @param	string	$text	Optional message.php
+     * @param    string $text Optional message
 	 * @return	CI_Output
 	 */
 	public function set_status_header($code = 200, $text = '')
